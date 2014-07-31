@@ -2,7 +2,7 @@
 
 In order to be considered for the Flex position we ask you to complete the following steps. 
 
-*Note: This task should take no longer than 1-2 hours at the most. Please read the entire project spec before you start work.*
+*Note: This task should take no longer than 1 hour to complete. Please read the entire project spec before you start work.*
 
 
 ### Prerequisites
