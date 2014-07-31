@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx" 
+	minWidth="955" minHeight="600"
+	creationComplete="init(event);">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Style source="css/main.css" />
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			import mx.managers.CursorManager;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.http.HTTPService;
+			
+			import utils.Texts;
+			
+			private var latexUrl:String = 'http://latex.codecogs.com/gif.latex?';
+			private var httpService:HTTPService = new HTTPService();
+			
+			private function init(event:FlexEvent):void {
+				httpService.addEventListener(ResultEvent.RESULT, onLatexResult);
+				httpService.addEventListener(FaultEvent.FAULT, onLatexFault);
+			}
+			
+			private function onEquaInpChange(event:Event):void {
+				var str:String = event.target.text;
+				sendHttp(str);
+			}
+			
+			private function onEquaClick(event:MouseEvent):void {
+				var str:String = event.target.label as String;
+				equaInp.text = str;
+				
+				sendHttp(str);
+			}
+			
+			private function sendHttp(str:String):void {
+				CursorManager.setBusyCursor();
+				
+				httpService.url = latexUrl + str;
+				httpService.send();
+			}
+			
+			private function onLatexResult(event:ResultEvent):void {
+				CursorManager.removeBusyCursor();
+				equaImg.source = event.target.url;
+			}
+			
+			private function onLatexFault(event:FaultEvent):void {
+				CursorManager.removeBusyCursor();
+				Alert.show(Texts.APP_LATEX_ERROR);
+			}
+		]]>
+	</fx:Script>
+	<s:BorderContainer id="cont" width="100%" height="100%">
+		<s:VGroup paddingLeft="30" paddingTop="30" gap="10" width="100%">
+			<s:HGroup width="100%" height="100%">
+				<s:Label text="{Texts.APP_NAME}" styleName="appName" />
+			</s:HGroup>
+			<s:HGroup verticalAlign="middle" width="100%" height="100%">
+				<s:Label text="{Texts.APP_ENTER_EQUATION}" />
+				<s:TextInput id="equaInp" change="onEquaInpChange(event);" />
+			</s:HGroup>
+			<s:HGroup verticalAlign="middle" width="100%" height="100%">
+				<s:Label text="{Texts.APP_RESULT_EQUATION}" />
+				<s:Image id="equaImg" />
+			</s:HGroup>
+			<s:HGroup verticalAlign="middle" width="100%" height="100%">
+				<s:Label text="{Texts.APP_SAMPLE_EQUATIONS}" />
+				<s:Button id="equa00" label="{Texts.APP_SAMPLE_EQUA00}" click="onEquaClick(event);" />
+				<s:Button id="equa01" label="{Texts.APP_SAMPLE_EQUA01}" click="onEquaClick(event);" />
+				<s:Button id="equa02" label="{Texts.APP_SAMPLE_EQUA02}" click="onEquaClick(event);" />
+			</s:HGroup>
+		</s:VGroup>
+	</s:BorderContainer>
+</s:Application>
