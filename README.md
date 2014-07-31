@@ -12,9 +12,9 @@ In order to be considered for the Flex position we ask you to complete the follo
 
 ## Task
 
-- The goal is to build a simple LaTeX editor which returns a gif image to Flex based on an equation the user enters into a text field similar tot he one you can see at http://www.codecogs.com/eqnedit.php (. The user can also click buttons to create the equation. 
+- The goal is to build a simple LaTeX editor which returns a gif image to Flex based on an equation the user enters into a text field similar to the one you can see at http://www.codecogs.com/eqnedit.php. The user can also click buttons to create the equation. 
 
-1. Fork this repository (if you don't know how to do that, Google is your friend)
+1. Fork this public repository (if you don't know how to do that, Google is your friend)
 2. Create a Flex 4 project with a *src* folder to contain your code. 
 3. In the *src* directory, please create a Flex app that accomplishes the following:
 	- Provide a text input field to the user to enter equation text
