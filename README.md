@@ -1,13 +1,13 @@
 ## Flex Programming Task
 
-In order to be considered for the Flex position, you must complete the following steps. 
+In order to be considered for the Flex position we ask you to complete the following steps. 
 
 *Note: This task should take no longer than 1-2 hours at the most. Please read the entire project spec before you start work.*
 
 
 ### Prerequisites
 
-- Please note that this will require some ActionScript3, Flex and git knowledge. 
+- This task requires some ActionScript3, Flex and git knowledge. 
 - You will need to have a Flex IDE (Flash Builder ideally) installed to complete this task. 
 
 ## Task
