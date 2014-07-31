@@ -1,0 +1,1303 @@
+/* 
+  Copyright (c) 2010-2011 NetworxOnline, All Rights Reserved.
+  
+  This file and its enclosed contents are confidential and proprietary
+  of NetworxOnline and may only be copied and / or distributed with express 
+  consent from NetworxOnline. 
+  
+*/
+
+Alert {
+	titleStyleName: "alertTitle";
+	messageStyleName: "alertMessage";
+	buttonStyleName: "alertButton";
+	dropShadowEnabled: true;
+	shadowDistance: 5;
+	shadowDirection: right;
+	embedFonts: true;
+	fontWeight: bold;
+	modalTransparencyColor: darkBlue;
+	themeColor: haloBlue;
+}
+
+@font-face
+{
+    src:url("../assets/fonts/arial.ttf");
+    fontWeight: normal;
+    font-family: "Arial";
+	unicode-range: U+0021-U+007B;
+}
+
+
+@font-face
+{
+    src:url("../assets/fonts/arialbd.ttf");
+    fontWeight: bold;
+    font-family: "ArialBold";
+	unicode-range: U+0021-U+007B;
+}
+
+@font-face
+{
+	src:url("../assets/fonts/GothamHTF-Medium.otf");
+	fontWeight:normal;
+	font-family:"GothamMed";
+	unicode-range: U+0021-U+007B;
+}
+
+@font-face
+{
+	src:url("../assets/fonts/GothamHTF-Book.otf");
+	fontWeight:normal;
+	font-family:"GothamBook";
+	unicode-range: U+0021-U+007B;
+}
+
+@font-face
+{
+	src:url("../assets/fonts/HelveticaNeueLTCom-Bd.ttf");
+	fontWeight: bold;
+	fontFamily: "HelveticaNeueBold";
+	unicodeRange: U+0021-U+007B;
+}
+
+@font-face
+{
+	src:url("../assets/fonts/HelveticaNeueLTCom-Roman.ttf");
+	fontWeight: normal;
+	fontFamily: "HelveticaNeue";
+	fontThickness: -200; 
+	unicodeRange: U+0021-U+007B;
+}
+
+.connectingLoader {
+	horizontal-align: center; 
+	vertical-align: middle; 
+}
+
+/*.arialFont
+{
+	font-family: Arial;
+}*/
+
+.arialFontLightGray11
+{
+	font-size: 11;
+	color: #999999;
+	font-family: Arial;
+	
+}
+
+.arialFontToolbarText{
+	font-size:11;
+	color:#d8d9db;
+	font-family:ArialBold;
+	font-weight:bold;
+	leading:0;
+}
+
+.arialFontGray11{
+	font-size: 11;
+	color: #444444;
+	font-family: Arial;
+	
+}
+
+a:link
+{ 
+	textDecoration:underline;
+}
+
+.arialFontGray11Bold{
+	font-size: 11;
+	color: #444444;
+	font-family:ArialBold;
+	font-weight:bold;
+}
+
+.arialFont9Bold
+{
+	font-size: 9;
+	font-weight: bold;
+	font-family: ArialBold;
+}
+
+.arialFont11Bold
+{
+	font-size: 11;
+	font-weight: bold;
+	font-family: ArialBold;
+}
+
+.arialFont11fe7400Bold
+{
+	font-size: 11;
+	font-weight: bold;
+	font-family: ArialBold;
+	color:#fe7400;
+}
+
+.arialFont13Bold{
+	font-size:13;
+	font-weight:bold;
+	font-family: ArialBold;
+}
+
+.arialLightGray12{
+	font-size:12;
+	color:#666666;
+	font-family: Arial;
+}
+
+.arialFontGray12
+{
+	font-size: 12;
+	color: #444444;
+	font-family: Arial;
+}
+
+.arialFontGray12Name
+{
+	font-size: 16;
+	color: #444444;
+	font-family: Future;
+	fontWeight:bold;
+}
+
+.arialFontGray12Bold
+{
+	font-size: 12;
+	color: #000000;
+	font-family: ArialBold;
+	font-weight:bold
+}
+
+.arialFontGray13
+{
+	font-size: 13;
+	color: #444444;
+	font-family: Arial;
+}
+
+.arialFontGray14
+{
+	font-size: 14;
+	color: #444444;
+	font-family: Arial;
+}
+
+.arialFontGray15
+{
+	font-size: 15;
+	color: #222222;
+	font-family: Arial;
+}
+
+.arialFontWhite12Bold{
+	font-size:12;
+	color:#ffffff;
+	font-weight:bold;
+	letter-spacing:-2;
+	font-family: ArialBold;
+}
+
+.ariaBlackMedium21Bold{
+	font-size:21;
+	color:#000000;
+	font-family:ArialBold;
+	font-weight:bold;
+	letter-spacing:-1;
+}
+
+.gothamBlueMedium21{
+	font-size:21;
+	color:#00529c;
+	font-family:ArialBold;
+	letter-spacing:-1;
+	font-family:GothamMed;
+}
+
+.gothamWhiteMedium24{
+	font-size:24;
+	color:#ffffff;
+	letter-spacing:-1;
+	font-family:GothamMed;
+}
+
+.gothamWhiteMedium20{
+	font-size:20;
+	color:#ffffff;
+	letter-spacing:-1;
+	font-family:GothamMed;
+}
+
+.gothamWhiteMedium18{
+	font-size:18;
+	color:#ffffff;
+	letter-spacing:-1;
+	font-family:GothamMed;
+}
+
+.gothamWhiteMedium16{
+	font-size:16;
+	color:#ffffff;
+	letter-spacing:-1;
+	font-family:GothamMed;
+}
+
+.gothamWhiteMedium15{
+	font-size:15;
+	color:#ffffff;
+	font-family:GothamMed;
+}
+
+.gothamWhiteMedium14{
+	font-size:14;
+	color:#ffffff;
+	font-family:GothamMed;
+}
+
+.gothamWhiteMedium13{
+	font-size:13;
+	color:#ffffff;
+	font-family:GothamMed;
+}
+
+.gothamWhiteMedium14Leading0{
+	font-size:14;
+	color:#ffffff;
+	font-family:GothamMed;
+	leading:0;
+}
+
+.arialWhite32{
+	font-size:32;
+	color:#ffffff;
+	font-family:Arial;
+}
+
+.gothamMedWhite56{
+	font-size:52;
+	color:#ffffff;
+	font-family:GothamMed;
+	font-weight:normal;
+	letter-spacing:-2;
+}
+
+.gothamMedWhite46{
+	font-size:46;
+	color:#ffffff;
+	font-family:GothamMed;
+	font-weight:normal;
+	letter-spacing:-2;
+}
+
+.gothamMedWhite36{
+	font-size:36;
+	color:#ffffff;
+	font-family:GothamMed;
+	font-weight:normal;
+	letter-spacing:-2;
+}
+
+.gothamMedWhite32{
+	font-size:32;
+	color:#ffffff;
+	font-family:GothamMed;
+	font-weight:normal;
+	letter-spacing:-2;
+}
+
+.gothamBookLightBlue31{
+	font-size:31;
+	color:#addbff;
+	font-family:GothamBook;
+}
+
+.gothamBlack23{
+	font-size:23;
+	color: #000000;
+	font-family:GothamBook;
+	letter-spacing:-1;
+}
+
+.gothamLightBlue22{
+	font-size:22;
+	color:#addbff;
+	font-family:GothamBook;
+}
+
+.gothamLightBlue19{
+	font-size:19;
+	color:#addbff;
+	font-family:GothamBook;
+	letter-spacing:-1;
+}
+
+.gothamLightBlue15{
+	font-size:15;
+	color:#addbff;
+	font-family:GothamBook;
+}
+
+.gothamLightBlue12{
+	font-size:12;
+	color:#addbff;
+	font-family:GothamBook;
+	leading:10;
+}
+
+.gothamLightBlue16{
+	font-size:16;
+	color:#addbff;
+	font-family:GothamBook;
+}
+
+.gothamBookOrange19{
+	font-size:19;
+	color:#ff7922;
+	font-family:GothamBook;
+}
+
+.gothamBookGrey13{
+font-size:13;
+color:#adbcc7;
+font-family:GothamBook;
+}
+
+.helveticaNeueBoldBlack23{
+	font-size:23;
+	color: #000000;
+	font-family:HelveticaNeue;
+	letter-spacing:-1;
+}
+
+.bodyTextLabel
+{	
+	font-size: 18;
+	font-weight: bold;
+	color: #444444;
+	font-family: ArialBold;
+}
+
+.bodyMessageBox
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	font-family: Arial;
+}
+
+Application
+{
+	font-family: Arial;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	horizontal-align: left;
+}
+
+.leftSideBox
+{
+	padding-left: 8;
+	padding-right: 8;
+	/* TODO: Why do we need to hack the padding here to make the left side and main box align. Fix. Jonas E  */
+	padding-bottom: -1;
+	vertical-gap:0;
+	font-family: Arial;
+	text-align: left; 
+}
+
+.leftSideCameraRoundedCornerBox
+{
+	corner-radius: 6;
+	border-style: solid;
+	border-thickness: 0;
+	background-color: #f5f5f5;
+	font-family: Arial;
+}
+
+.arial12Black{
+	font-size:12px;
+	font-family: Arial;
+}
+
+.mainBodyViewBox
+{
+	padding-top: 6;
+	padding-right: 8;
+	padding-left: 8;
+	padding-bottom: 8;
+	vertical-gap: 0;
+	font-family: Arial;
+}
+
+.screenStreamBox
+{
+	vertical-gap: 0;
+	font-family: Arial;
+}
+
+.webCameraBox
+{
+	background-color: #cccccc;
+	font-family: Arial;
+}
+
+.roundedCornerBox
+{
+	corner-radius: 6;
+	border-style: solid;
+	border-thickness: 1;
+	background-color: #f5f5f5;
+	padding-left: 8;
+	padding-right: 8;
+	padding-top: 8;
+	padding-bottom: 8;
+	border-skin: Embed( "assets/left-side-rounded-bg.png", scaleGridTop="7", scaleGridBottom="22", scaleGridLeft="5", scaleGridRight="23" );
+}
+
+.roundedCornerBoxCollapse
+{
+	corner-radius: 0;
+	border-style: solid;
+	border-thickness: 0;
+	background-color: #f5f5f5;
+	padding-left: 5;
+	padding-right: 5;
+	padding-top: 8;
+	padding-bottom: 5;
+	border-skin: Embed( "assets/left-side-rounded-bottom-bg.png", scaleGridTop="1", scaleGridBottom="10", scaleGridLeft="6", scaleGridRight="22" );
+	font-family: Arial;
+}
+
+.roundedCornerBoxCollapseNoPad{
+	corner-radius: 0;
+	border-style: solid;
+	border-thickness: 0;
+	background-color: #f5f5f5;
+	border-skin: Embed( "assets/left-side-rounded-bottom-bg.png", scaleGridTop="1", scaleGridBottom="10", scaleGridLeft="6", scaleGridRight="22" );
+	font-family: Arial;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.screenStreamBox
+{
+	corner-radius: 6;
+	border-style: solid;
+	font-family: Arial;
+}
+
+.trialLinkBox
+{
+	corner-radius: 6;
+	border-style: solid;
+	border-thickness: 0;
+	border-skin: ClassReference("com.networxonline.ui.view.skins.SimpleRoundedCornerBottomBorder");
+	vertical-align: middle;
+	line-height:0;
+	font-family: Arial;
+}
+
+.hRule
+{
+	stroke-color: #eeeeee;
+	shadow-color: #fdfdfd;
+}
+
+.linkButtonTransparentBackground
+{
+	font-size: 12;
+	color: #216fe1;
+	text-roll-over-color: #5dcff4;
+	skin: ClassReference( null );
+	text-align: center;
+	font-family: Arial;
+}
+
+.linkButtonTransparentBackgroundBig{
+	font-size: 18;
+	color: #216fe1;
+	text-roll-over-color: #5dcff4;
+	skin: ClassReference( null );
+	text-align: center;
+	text-roll-over-color:#000000;
+	font-family: Arial;
+}
+
+.toolbar
+{
+	border-style: solid;
+	border-thickness: 0;
+	border-skin: ClassReference("com.networxonline.ui.view.skins.SimpleGradientBorder");
+	fill-colors: #0099FF, #000099;
+	corner-radius: 6;
+/*	drop-shadow-enabled: true;*/
+	vertical-align: middle;
+	padding-left: 8;
+	padding-right: 8;
+	font-family: Arial;
+}
+
+.toolbarDropDown
+{
+	text-selected-color: #ffffff;
+	text-roll-over-color: #ffffff;
+	color: #ffffff;
+	paddingLeft:5;
+	paddingRight:0;
+	paddingTop:2;
+	font-size: 11;
+	font-family: ArialBold;
+	leading:0;
+	horizontal-gap:0;
+	dropdownStyleName:toolbarDropDownOpen; 
+	cornerTopLeft: 4;
+	cornerTopRight: 0;
+	cornerBottomLeft: 4;
+	cornerBottomRight: 0;
+	borderColor: #4f5156;
+	fillColors: #b0b1b5, #72757d;
+	fillAlphas: .6, 1;
+	highlightAlphas: 0, 0;
+	innerBorderColor: #CCCCCC;
+	innerBorderAlpha: .5; 
+	skin: ClassReference("com.networxonline.ui.view.skins.CustomBorder");
+
+}
+
+.callControlRightSide
+{
+	fillColors: #cbcdd0, #a2a5a9;
+	borderColor: #4f5156;
+	borderAlpha: 1; 
+	borderThickness: 1; 
+	cornerTopLeft: 0;
+	cornerTopRight: 4;
+	cornerBottomLeft: 0;
+	cornerBottomRight: 4;
+	innerBorderColor: #CCCCCC;
+	innerBorderAlpha: .4;
+	borderSkin: ClassReference("com.networxonline.ui.view.skins.CustomBorder");
+	
+}
+
+.toolbarDropDownOpen {
+	fontFamily: HelveticaNeue; 
+	fontSize: 12;
+	fontWeight: normal;
+	cornerRadius: 4; 
+	backgroundColor: #f5f5f5; 
+	rollOverColor: #e4e4e4;
+	selectionColor: #c4c4c4;
+	textRollOverColor: #55595c; 
+	textSelectedColor: #55595c;
+	color: #55595c;
+	/*backgroundImage: Embed("assets/dropdown-panel.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );	*/	
+}
+
+.toolbarButton
+{
+	
+	
+	text-selected-color: #ffffff;
+	text-roll-over-color: #ffffff;
+	color: #ffffff;
+	padding-left:5;
+	padding-right:5;
+	font-size: 11;
+	up-skin: Embed( "assets/toolbar-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );	
+	over-skin: Embed( "assets/toolbar-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	up-skin: Embed( "assets/toolbar-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-over-skin: Embed( "assets/toolbar-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-up-skin: Embed( "assets/toolbar-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	down-skin: Embed( "assets/toolbar-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-down-skin: Embed( "assets/toolbar-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	font-family: ArialBold;
+	leading:0;
+	horizontal-gap:0;
+
+}
+
+.toolbarToggleButton
+{
+	text-selected-color: #ffffff;
+	text-roll-over-color: #ffffff;
+	color: #ffffff;
+	padding-left:5;
+	padding-right:5;
+	leading:0;
+	font-size: 11;
+	up-skin: Embed( "assets/toolbar-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );	
+	over-skin: Embed( "assets/toolbar-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	up-skin: Embed( "assets/toolbar-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	down-skin: Embed( "assets/toolbar-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-over-skin: Embed( "assets/toggle-button-selected.png", scaleGridTop="6", scaleGridBottom="24", scaleGridLeft="6", scaleGridRight="69" );
+	selected-up-skin: Embed( "assets/toggle-button-selected.png", scaleGridTop="6", scaleGridBottom="24", scaleGridLeft="6", scaleGridRight="69" );
+	selected-down-skin: Embed( "assets/toggle-button-selected.png", scaleGridTop="6", scaleGridBottom="24", scaleGridLeft="6", scaleGridRight="69" );
+	font-family: ArialBold;
+	horizontal-gap:0;
+}
+
+.toolbarToggleButtonBar
+{
+	button-style-name: "toolbarToggleButtonBarButton";
+	first-button-style-name: "toolbarToggleButtonBarFirstButton";
+	last-button-style-name: "toolbarToggleButtonBarLastButton";
+	theme-color: #83868d;
+	font-family: ArialBold;
+}
+
+.toolbarToggleButtonBarButton
+{
+	text-selected-color: #ffffff;
+	text-roll-over-color: #ffffff;
+	color: #ffffff;
+	font-size: 11;
+	over-skin: Embed( "assets/toolbar-toggle-button-bar-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	up-skin: Embed( "assets/toolbar-toggle-button-bar-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-over-skin: Embed( "assets/toolbar-toggle-button-bar-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-up-skin: Embed( "assets/toolbar-toggle-button-bar-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	down-skin: Embed( "assets/toolbar-toggle-button-bar-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-down-skin: Embed( "assets/toolbar-toggle-button-bar-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	font-family: ArialBold;
+}
+
+.toolbarToggleButtonBarFirstButton
+{
+	text-selected-color: #ffffff;
+	text-roll-over-color: #ffffff;
+	color: #ffffff;
+	font-size: 11;
+	over-skin: Embed( "assets/toolbar-toggle-button-bar-first-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-over-skin: Embed( "assets/toolbar-toggle-button-bar-first-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	up-skin: Embed( "assets/toolbar-toggle-button-bar-first-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-up-skin: Embed( "assets/toolbar-toggle-button-bar-first-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	down-skin: Embed( "assets/toolbar-toggle-button-bar-first-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-down-skin: Embed( "assets/toolbar-toggle-button-bar-first-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	font-family: ArialBold;
+}
+
+.toolbarToggleButtonBarLastButton
+{
+	text-selected-color: #ffffff;
+	text-roll-over-color: #ffffff;
+	color: #ffffff;
+	font-size: 11;
+	over-skin: Embed( "assets/toolbar-toggle-button-bar-last-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-over-skin: Embed( "assets/toolbar-toggle-button-bar-last-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	up-skin: Embed( "assets/toolbar-toggle-button-bar-last-button-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-up-skin: Embed( "assets/toolbar-toggle-button-bar-last-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	down-skin: Embed( "assets/toolbar-toggle-button-bar-last-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-down-skin: Embed( "assets/toolbar-toggle-button-bar-last-button-selected-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	font-family: ArialBold;
+}
+
+.meetingActionsComboBox
+{
+	text-selected-color: #ffffff;
+	text-roll-over-color: #ffffff;
+	color: #ffffff;
+	font-size: 12;
+	dropdownStyleName: "meetingActionsComboBoxDropDown";
+	padding-left: 10;
+	text-indent: 20;
+	label-placement: right;
+	text-align: left;
+	icon: Embed( "assets/meeting-actions-combobox-icon.png" );
+	over-skin: Embed( "assets/meeting-actions-combobox-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-over-skin: Embed( "assets/meeting-actions-combobox-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	up-skin: Embed( "assets/meeting-actions-combobox-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-up-skin: Embed( "assets/meeting-actions-combobox-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	down-skin: Embed( "assets/meeting-actions-combobox-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	selected-down-skin: Embed( "assets/meeting-actions-combobox-skin.png", scaleGridTop="5", scaleGridBottom="24", scaleGridLeft="4", scaleGridRight="68" );
+	font-family: Arial;
+}
+
+.meetingActionsComboBoxDropDown
+{
+	background-color: #55a3ee;
+	font-family: Arial;
+}
+
+.scaleScrollToggleButtonBar
+{
+	button-style-name: "toolbarToggleButtonBarButton";
+	theme-color: #83868d;
+	font-family: ArialBold;
+}
+
+.collapseButton
+{
+	skin: Embed( "assets/left-col-collapse-down.png", scaleGridTop="3", scaleGridBottom="25", scaleGridLeft="23", scaleGridRight="55" );
+	over-skin: Embed( "assets/left-col-collapse-down.png", scaleGridTop="3", scaleGridBottom="25", scaleGridLeft="23", scaleGridRight="55" );
+	down-skin: Embed( "assets/left-col-collapse-down.png", scaleGridTop="3", scaleGridBottom="25", scaleGridLeft="23", scaleGridRight="55" );
+	selected-up-skin: Embed( "assets/left-col-collapse.png", scaleGridTop="3", scaleGridBottom="25", scaleGridLeft="23", scaleGridRight="55" );
+	selected-over-skin:Embed( "assets/left-col-collapse.png", scaleGridTop="3", scaleGridBottom="25", scaleGridLeft="23", scaleGridRight="55" );
+	selected-down-skin: Embed( "assets/left-col-collapse.png", scaleGridTop="3", scaleGridBottom="25", scaleGridLeft="23", scaleGridRight="55" );
+	padding-left:25px;
+	padding-top:4px;
+	font-size: 11;
+	color: #444444;
+	font-style:normal;
+	font-family: ArialBold;
+	disabled-color:  #444444;
+}
+
+.voipDropDown {
+	fontFamily: ArialBold; 
+	fontSize: 13;
+	color: #55595c; 
+	
+	cornerRadius: 2;
+	borderColor: #d2d2d2;
+	backgroundColor: #dfdfdf;
+	focusAlpha: 0; 
+	focusRoundedCorners: 0; 
+	useRollOver: false;	
+	
+	/*
+	textRollOverColor: #FFFFFF; 
+	selectionColor: #858c8e;
+	rollOverColor: #858c8e;
+	*/
+	
+	fillColors: #fdfdfd, #dfdfdf; 
+	
+	highlightAlphas: 0,0;
+	iconColor: #aeaeae;
+	skin:ClassReference("com.networxonline.ui.view.skins.ButtonNullSkin");
+}
+
+
+.comboDropdown {
+	fontFamily: HelveticaNeue; 
+	fontSize: 12;
+	color: #55595c;
+	textRollOverColor: #55595c; 
+	textSelectedColor: #55595c;
+	backgroundColor: #FFFFFF; 
+	rollOverColor: #ebebeb;
+	selectionColor: #ebebeb; 
+	useRollOver: true; 
+	borderSides: left, right; 
+	borderStyle:inset; 
+	borderColor: #d2d2d2; 
+	paddingTop: 5; 
+	paddingBottom: 5; 
+	
+	dropShadowColor: #FFFFFF;
+	dropShadowEnabled: true;
+	shadowDistance: 1;
+	shadowDirection: center;
+	cornerRadius: 4;
+	
+}
+
+.voipLabelStyle {
+	color: #FFFFFF;
+	fontFamily: HelveticaNeue; 
+	fontSize: 11;
+}
+
+.voipOverlay {
+	border-skin: Embed("assets/audio-selector-panel.png", scaleGridTop="30", scaleGridBottom="430", scaleGridLeft="60", scaleGridRight="666");
+}
+
+.dialinOverlay {
+	border-skin: Embed("assets/panel-info.png", scaleGridTop="30", scaleGridBottom="430", scaleGridLeft="60", scaleGridRight="666");
+}
+
+.avOverlay {
+	border-skin: Embed("assets/panel-audio.png", scaleGridTop="30", scaleGridBottom="430", scaleGridLeft="60", scaleGridRight="666");
+}
+
+.micMeterOverlay {
+	skin: ClassReference(null); 
+	icon: Embed("assets/panel-audio-el.png");
+}
+
+.voidAudioSelectorButton {
+	upSkin: Embed("assets/audio-selector-bt.png", scaleGridTop="15", scaleGridBottom="80", scaleGridLeft="15", scaleGridRight="555" );
+	overSkin: Embed("assets/audio-selector-bt-hover.png", scaleGridTop="15", scaleGridBottom="80", scaleGridLeft="15", scaleGridRight="555" );
+	downSkin: Embed("assets/audio-selector-bt-active.png", scaleGridTop="15", scaleGridBottom="80", scaleGridLeft="15", scaleGridRight="555" );
+	selectedDownSkin: Embed("assets/audio-selector-bt-active.png", scaleGridTop="15", scaleGridBottom="80", scaleGridLeft="15", scaleGridRight="555" );
+	selectedUpSkin: Embed("assets/audio-selector-bt-active.png", scaleGridTop="15", scaleGridBottom="80", scaleGridLeft="15", scaleGridRight="555" );
+	selectedOverSkin: Embed("assets/audio-selector-bt-active.png", scaleGridTop="15", scaleGridBottom="80", scaleGridLeft="15", scaleGridRight="555" );
+	disabledSkin: Embed("assets/audio-selector-bt-active.png", scaleGridTop="15", scaleGridBottom="80", scaleGridLeft="15", scaleGridRight="555" );
+	fontSize: 23px; 
+	font-family: HelveticaNeueBold;
+	color: #FFFFFF; 
+	textRollOverColor: #FFFFFF;
+	textSelectedColor: #FFFFFF;
+}
+
+.voipEnterTheMeetingButton {
+	upSkin: Embed("assets/audio-selector-bt-enter.png");
+	overSkin: Embed("assets/audio-selector-bt-enter-hover.png");
+	downSkin: Embed("assets/audio-selector-bt-enter-active.png");
+	fontSize: 16px; 
+	fontFamily: HelveticaNeueBold;
+ 	color: #FFFFFF; 
+	textRollOverColor: #FFFFFF;
+	textSelectedColor: #FFFFFF;
+}
+
+.voipPopupCancelButton {
+	upSkin: Embed("assets/audio-selector-close.png");
+	overSkin: Embed("assets/audio-selector-close-hover.png");
+	downSkin: Embed("assets/audio-selector-close-active.png");
+}
+
+.voipCheckBox {
+	fontSize: 14px; 
+	fontFamily: HelveticaNeue;
+	fontWeight: normal; 
+	color: #000; 
+	textRollOverColor: #000;
+	textSelectedColor: #000;
+	leading: -3;
+}
+
+.backSelectorButton {
+	upSkin: Embed("assets/btn-back.png");
+	overSkin: Embed("assets/btn-back.png");
+	downSkin: Embed("assets/btn-back.png");
+	selectedDownSkin: Embed("assets/btn-back.png");
+	selectedUpSkin: Embed("assets/btn-back.png");
+	selectedOverSkin: Embed("assets/btn-back.png");
+	disabledSkin: Embed("assets/btn-back.png");
+}
+
+.okSelectorButton {
+	upSkin: Embed("assets/btn-ok.png");
+	overSkin: Embed("assets/btn-ok.png");
+	downSkin: Embed("assets/btn-ok.png");
+	selectedDownSkin: Embed("assets/btn-ok.png");
+	selectedUpSkin: Embed("assets/btn-ok.png");
+	selectedOverSkin: Embed("assets/btn-ok.png");
+	disabledSkin: Embed("assets/btn-ok.png");
+}
+
+.settingsSelectorButton {
+	upSkin: Embed("assets/btn-settings.png");
+	overSkin: Embed("assets/btn-settings.png");
+	downSkin: Embed("assets/btn-settings.png");
+	selectedDownSkin: Embed("assets/btn-settings.png");
+	selectedUpSkin: Embed("assets/btn-settings.png");
+	selectedOverSkin: Embed("assets/btn-settings.png");
+	disabledSkin: Embed("assets/btn-settings.png");
+}
+
+.popupBox{
+	border-skin: Embed( "assets/popup-bg.png", scaleGridTop="22", scaleGridBottom="52", scaleGridLeft="54", scaleGridRight="70" );
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right:10px;
+	font-family: Arial;
+}
+
+.questionsList{
+	margin-left:10px;
+	font-family: Arial;
+}
+
+.blueConfirmButton{
+	skin: Embed( "assets/blue-confirm-button.png", scaleGridTop="6", scaleGridBottom="25", scaleGridLeft="5", scaleGridRight="12" );
+	font-size: 13;
+	font-weight:bold;
+	color:#ffffff;
+	text-roll-over-color: #000000;
+	padding-left:23px;
+	padding-right:23px;
+	font-family: ArialBold;	
+}
+
+.greyCancelButton{
+skin: Embed( "assets/grey-cancel-button.png", scaleGridTop="6", scaleGridBottom="25", scaleGridLeft="6", scaleGridRight="12" );
+font-size: 13;
+font-weight:bold;
+color:#ffffff;
+text-roll-over-color: #ffffff;
+padding-left:20px;
+padding-right:20px;
+font-family: ArialBold;
+}
+
+.borderlessList{
+border-style:none;
+font-family: Arial;
+roll-over-color:#ffffff;
+selection-color:#ffffff;
+}
+
+.blackHrule{
+stroke-color:#d6d6d6;
+stroke-width:1;
+padding-bottom:0;
+font-family: Arial;
+}
+
+.questionInfoBox{
+horizontal-gap:-5;
+}
+
+.linkButtonSmall{
+font-weight:normal;
+font-size:9;
+font-family:Arial;
+color:#216fe1;
+text-roll-over-color:#c54545;
+text-decoration:underline;
+icon: Embed( "assets/bullet.png");
+}
+
+.buttonSmall{
+padding-top:2;
+padding-bottom:2;
+padding-left:2;
+padding-right:2;
+}
+
+.buttonLarge{
+padding-top:14;
+padding-bottom:14;
+padding-left:19;
+padding-right:19;
+skin: Embed( "assets/button-large.png", scaleGridTop="4", scaleGridBottom="52", scaleGridLeft="8", scaleGridRight="24" );
+font-family: Arial;
+font-size:19;
+color:#ffffff;
+icon: Embed( "assets/icon-share-screen.png");
+horizontal-gap:10;
+text-roll-over-color:#f0e0bc;
+use-hand-cursor:true;
+line-height:0;
+leading:0;
+disabled-icon: Embed("assets/icon-share-disabled.png");
+}
+
+.buttonLargeHelp{
+padding-top:14;
+padding-bottom:14;
+padding-left:19;
+padding-right:19;
+skin: Embed( "assets/button-large-grey.png", scaleGridTop="5", scaleGridBottom="52", scaleGridLeft="5", scaleGridRight="18" );
+font-family: Arial;
+font-size:19;
+color:#ffffff;
+icon: Embed( "assets/icon-help.png");
+horizontal-gap:10;
+text-roll-over-color:#dddddd;
+use-hand-cursor:true;
+line-height:0;
+leading:0;
+}
+
+.participantView{
+background-color:#002344;
+padding-bottom:44;
+border-skin: ClassReference("com.networxonline.ui.view.skins.ParticipantWelcomeBorder");
+}
+
+.presenterSubView{
+background-color:#002344;
+border-skin: ClassReference("com.networxonline.ui.view.skins.ParticipantWelcomeBorder");
+padding-bottom:0;
+vertical-gap:0;
+}
+
+.hostViewFooter{
+background-color:#002e50;
+vertical-gap:0;
+}
+
+.participantMeetingInfoBox{
+border-sides:"top";
+border-style:"solid";
+border-color:#2e587a;
+padding-top:44;
+}
+
+.participantMeetingInfoBoxLeft{
+border-sides:"right";
+border-style:"solid";
+border-color:#2e587a;
+padding-right:10;
+vertical-gap:7;
+}
+
+.participantAudioInstructionBox{
+padding-left:24;
+}
+
+.participantAudioInstruction{
+horizontal-gap:20;
+}
+
+.audioStreamControl{
+	
+	borderSkin: Embed( "assets/bg-listen-audio.png", scaleGridTop="4", scaleGridBottom="34", scaleGridLeft="4", scaleGridRight="45" );	
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.audioStreamControlBox {
+	padding-top: 6px;
+	padding-bottom: 6px; 
+}
+
+.buttonAudioStreamListen{
+	skin: Embed( "assets/button-listen-audio.png", scaleGridTop="3", scaleGridBottom="25", scaleGridLeft="3", scaleGridRight="24" );
+	selected-up-skin: Embed( "assets/button-listen-audio-on.png", scaleGridTop="3", scaleGridBottom="25", scaleGridLeft="3", scaleGridRight="24" );
+	selected-over-skin:Embed( "assets/button-listen-audio-on.png", scaleGridTop="3", scaleGridBottom="25", scaleGridLeft="3", scaleGridRight="24" );
+	selected-down-skin: Embed( "assets/button-listen-audio-on.png", scaleGridTop="3", scaleGridBottom="25", scaleGridLeft="3", scaleGridRight="24" );
+	text-roll-over-color:#5dcff4;
+	color:#ffffff;
+	font-size:11;
+	font-family:Arial;
+	leading:0;
+}
+
+.volumeAudioStream{
+	trackSkin:Embed( "assets/listen-audio-scrolltrack.png", scaleGridTop="1", scaleGridBottom="4", scaleGridLeft="4", scaleGridRight="47" );
+	thumbSkin:Embed( "assets/listen-audio-sliderthumb.png");
+}
+
+.shareInstructionsPopup{
+	border-skin: Embed( "assets/bg-popup-basic.png", scaleGridTop="6", scaleGridBottom="27", scaleGridLeft="6", scaleGridRight="29" );
+	padding-left:6;
+	padding-right:6;
+	padding-bottom:14;
+	padding-top:18;
+	vertical-gap:10;
+}
+
+.checkbox{
+	font-family:Arial;
+	font-size:11;
+	padding-top:7;
+}
+
+.closeButton{
+	skin: Embed( "assets/button-close.png", scaleGridTop="0", scaleGridBottom="30", scaleGridLeft="0", scaleGridRight="30");	
+}
+
+.bulletButtonHighlight{
+	text-roll-over-color: #addbff;
+	text-selected-color: #addbff;
+	skin: ClassReference( null );
+	font-size:15;
+	color:#ff9900;
+	font-family: GothamBook;
+	font-weight:normal;
+}
+
+.bulletButton{
+	text-roll-over-color: #ff9900;
+	text-selected-color: #ff9900;
+	skin: ClassReference( null );
+	font-size:13;
+	color:#addbff;
+	font-family: GothamBook;
+	font-weight:normal;
+}
+
+.copyButton{
+	skin: Embed( "assets/clipboard.png");
+}
+
+.shareInstructionsPopupHeader{
+	border-skin: ClassReference("com.networxonline.ui.view.skins.SimpleHeaderBorder");
+	padding-bottom:9;
+}
+
+.skypeButtonIcon{
+	skin: ClassReference(null); 
+	icon: Embed( "assets/skype-button-small.png");
+	iconPlacement: left; 
+	color: #FFFFFF; 
+	fontFamily:HelveticaNeue;
+}
+
+.skypeButtonSmall{
+	skin: Embed( "assets/button-skype.png");
+	overSkin: Embed( "assets/button-skype-active.png");
+	downSkin:  Embed( "assets/button-skype-active.png");
+}
+
+.backButtonIcon {
+	skin: ClassReference(null);
+	icon: Embed("assets/btn-back.png");
+}
+
+.okButtonIcon {
+	skin: ClassReference(null);
+	icon: Embed("assets/btn-ok.png");
+}
+
+.settingsButtonIcon {
+	skin: ClassReference(null);
+	icon: Embed("assets/btn-settings.png");
+}
+
+.muteButtonSmall{
+	upSkin: Embed( "assets/button-mic-mute.png");
+	overSkin: Embed( "assets/button-mic-mute.png");
+	downSkin:  Embed( "assets/button-mic-mute-active.png");
+	selectedUpSkin :  Embed( "assets/button-mic-mute-active.png");
+	selectedDownSkin :  Embed( "assets/button-mic-mute-active.png");
+	selectedOverSkin :  Embed( "assets/button-mic-mute-active.png");
+}
+
+.skypeButtonLarge{
+skin: Embed( "assets/skype-button-large.png");
+}
+
+.presenterSharingBg{
+border-skin: Embed( "assets/presenter-sharing-bg.png", scaleGridTop="4", scaleGridBottom="35", scaleGridLeft="0", scaleGridRight="10");
+}
+
+.chatPod{
+border-skin:Embed("assets/chat-pod-bg.png",scaleGridTop="1", scaleGridBottom="9", scaleGridLeft="3", scaleGridRight="18");
+verticalGap:5;
+paddingTop:2;
+}
+
+.chatBlockButton{
+skin: Embed("assets/chat-block-button-up.png");
+over-skin: Embed("assets/chat-block-button-over.png");
+down-skin: Embed("assets/chat-block-button-selected.png");
+}
+
+.chatUnblockButton{
+skin: Embed("assets/chat-block-button-selected.png");
+over-skin: Embed("assets/chat-block-button-selected.png");
+down-skin: Embed("assets/chat-block-button-over.png");
+}
+
+.chatDeleteButton{
+skin: Embed("assets/chat-delete-button.png");
+over-skin: Embed("assets/chat-delete-button-over.png");
+down-skin: Embed("assets/chat-delete-button-selected.png");
+}
+
+.chatMessageItemRenderer{
+border-skin: Embed("assets/chat-item-renderer-bg.png", scaleGridTop="2", scaleGridBottom="60",scaleGridLeft="2",scaleGridRight="176");
+border-sides:"bottom";
+border-style:"solid";
+padding-bottom:10;
+padding-top:10;
+}
+
+.chatMessageItemRendererHost{
+border-skin: Embed("assets/chat-item-renderer-host-bg.png", scaleGridTop="2", scaleGridBottom="60",scaleGridLeft="2",scaleGridRight="176");
+padding-bottom:10;
+padding-top:10;
+}	
+ 
+.chatInput{
+border-skin: Embed("assets/chat-textinput.png", scaleGridTop="2", scaleGridBottom="27",scaleGridLeft="2",scaleGridRight="35");
+font-size:12;
+padding-top:6;
+padding-left:2;
+}
+
+.chatInputText{
+font-size:12;
+}
+.chatInputBg{
+border-skin:Embed("assets/chat-textinputbg.png", scaleGridTop="10",scaleGridBottom="34",scaleGridLeft="8",scaleGridRight="171");
+}
+
+.participantsChatTabs{
+padding-top:0;
+padding-bottom:0;
+padding-left:0;
+padding-right:0;
+border-skin:ClassReference(null);
+tab-style-name:tabs;
+}
+
+.tabs{
+font-size: 11;
+color: #656669;
+font-family: Arial;
+skin:Embed("assets/tab-up.png", scaleGridTop="7",scaleGridLeft="7",scaleGridBottom="30",scaleGridRight="58");
+over-skin:Embed("assets/tab-up.png", scaleGridTop="7",scaleGridLeft="7",scaleGridBottom="30",scaleGridRight="58");
+down-skin:Embed("assets/tab-up.png", scaleGridTop="7",scaleGridLeft="7",scaleGridBottom="30",scaleGridRight="58");
+selected-up-skin:Embed("assets/tab-selected.png", scaleGridTop="7",scaleGridLeft="7",scaleGridBottom="30",scaleGridRight="58");
+selected-over-skin:Embed("assets/tab-selected.png", scaleGridTop="7",scaleGridLeft="7",scaleGridBottom="30",scaleGridRight="58");
+selected-down-skin:Embed("assets/tab-selected.png", scaleGridTop="7",scaleGridLeft="7",scaleGridBottom="30",scaleGridRight="58");
+}
+
+.chatList{
+padding-top:0;
+padding-bottom:0;
+padding-right:0;
+background-color:#f5f5f5;
+border-thickness:0; 
+}
+
+.participantList{
+border-skin:ClassReference(null);
+}
+
+.participantSizeBtns{
+padding-top:5px;
+padding-bottom:8px;
+padding-left:5px;
+padding-right:5px;
+border-skin:Embed("assets/part-expd-collpse-bg.png", scaleGridTop="1",scaleGridLeft="3",scaleGridBottom="30",scaleGridRight="26");
+}
+
+.expandCollapseButtonBar{
+firstButtonStyleName:firstButtonBar;
+lastButtonStyleName:lastButtonBar;
+buttonWidth:85;
+}
+
+.firstButtonBar{
+skin:Embed("assets/toggle-bar-first-up.png", scaleGridTop="3",scaleGridLeft="3",scaleGridBottom="21",scaleGridRight="78");
+selected-up-skin:Embed("assets/toggle-bar-first-selected.png", scaleGridTop="3",scaleGridLeft="3",scaleGridBottom="21",scaleGridRight="78");
+selected-over-skin:Embed("assets/toggle-bar-first-selected.png", scaleGridTop="3",scaleGridLeft="3",scaleGridBottom="21",scaleGridRight="78");
+selected-down-skin:Embed("assets/toggle-bar-first-selected.png", scaleGridTop="3",scaleGridLeft="3",scaleGridBottom="21",scaleGridRight="78");
+font-size: 11;
+color: #656669;
+font-family: Arial;
+}
+
+.lastButtonBar{
+skin:Embed("assets/toggle-bar-last-up.png", scaleGridTop="3",scaleGridLeft="2",scaleGridBottom="21",scaleGridRight="83");
+selected-up-skin:Embed("assets/toggle-bar-last-selected.png", scaleGridTop="3",scaleGridLeft="2",scaleGridBottom="21",scaleGridRight="83");
+selected-over-skin:Embed("assets/toggle-bar-last-selected.png", scaleGridTop="3",scaleGridLeft="2",scaleGridBottom="21",scaleGridRight="83");
+selected-down-skin:Embed("assets/toggle-bar-last-selected.png", scaleGridTop="3",scaleGridLeft="2",scaleGridBottom="21",scaleGridRight="83");
+font-size: 11;
+color: #656669;
+font-family: Arial;
+}
+
+.meetMeeterBg{
+	padding-top:7px;
+	border-skin:Embed("assets/meet-meter-bg.png", scaleGridTop="1",scaleGridLeft="212",scaleGridBottom="54",scaleGridRight="282");	
+}
+.meetMeeterHostBg{
+	padding-top:7px;
+	border-skin:Embed("assets/host-meter-bg.png", scaleGridTop="1",scaleGridLeft="212",scaleGridBottom="54",scaleGridRight="282");	
+}
+
+.meetMeterSlider{
+thumbSkin:Embed( "assets/meet-meter-control.png");
+trackSkin:Embed( "assets/meet-meter-track.png");
+}
+
+.meetMeterHostSlider{
+thumbSkin:Embed( "assets/meet-meter-control-host.png");
+trackSkin:Embed( "assets/meet-meter-track.png");
+}
