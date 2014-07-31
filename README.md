@@ -19,7 +19,7 @@ In order to be considered for the Flex position we ask you to complete the follo
 3. In the *src* directory, please create a Flex app that accomplishes the following:
 	- Provide a text input field to the user to enter equation text
 	- Provide 3 buttons with LaTeX symbols of your choice which, when clicked, add the clicked symbol into the text field (see http://www.codecogs.com/eqnedit.php for an example). If you have time feel free to add additional buttons
-	- Create an HTTPService which requests a new image from 'http://latex.codecogs.com/gif.latex?\LARGE%20\bg_white%20[equation]' upon every change of the text field. A valid example for the equation 1+1 would be 'http://latex.codecogs.com/gif.latex?\LARGE%20\bg_white%201+1'
+	- Requests/loads a new image from 'http://latex.codecogs.com/gif.latex?\LARGE%20\bg_white%20[equation]' upon every change of the text field. A valid example for the equation 1+1 would be 'http://latex.codecogs.com/gif.latex?\LARGE%20\bg_white%201+1'
 	- Display the returned image underneath the text field
 
 ## Once Complete
