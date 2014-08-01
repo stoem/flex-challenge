@@ -15,9 +15,6 @@
 
         private static const REQUEST_BASE_URL:String = "http://latex.codecogs.com/gif.latex?%5CLARGE%20%5Cbg_white%20";
 
-        [Bindable]
-        private var statusMessage:String;
-
         private var triggersCollection:Vector.<CustomButton>;
 
         protected function applicationCompleteHandler(event:FlexEvent):void
@@ -74,7 +71,7 @@
 
         private function unregisterTriggerHandlers(dispatcher:EventDispatcher):void
         {
-            dispatcher.removeEventListener(MouseEvent.CLICK, triggerHandler);
+//            dispatcher.removeEventListener(MouseEvent.CLICK, triggerHandler);
         }
 
         private function triggerHandler(event:MouseEvent):void
