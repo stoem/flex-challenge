@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100" xmlns:local="*" 
+		 creationComplete="init()">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			private function init():void {
+				btn_01.sourceSymbol('cap');
+				btn_02.sourceSymbol('angle');
+				btn_03.sourceSymbol('leftarrow ');
+				btn_04.sourceSymbol('rightarrow');
+				btn_041.sourceSymbol('AE');
+				
+				btn_05.sourceSymbol('leq');
+				btn_06.sourceSymbol('Lambda');
+				btn_07.sourceSymbol('Gamma');
+				btn_08.sourceSymbol('mathbb{N}');
+				btn_09.sourceSymbol('varepsilon');
+				
+				
+				
+			}
+		]]>
+	</fx:Script>
+	<s:Rect width="100%" height="100%">
+		
+	</s:Rect>
+	
+	<local:SymbolView id="btn_01" left="30"/>
+	<local:SymbolView id="btn_02" left="60"/>
+	<local:SymbolView id="btn_03" left="90"/>
+	<local:SymbolView id="btn_04" left="120"/>
+	<local:SymbolView id="btn_041" left="150"/>
+	
+	<local:SymbolView id="btn_05" left="30" top="30"/>
+	<local:SymbolView id="btn_06" left="60" top="30"/>
+	<local:SymbolView id="btn_07" left="90" top="30"/>
+	<local:SymbolView id="btn_08" left="120" top="30"/>
+	<local:SymbolView id="btn_09" left="150" top="30"/>
+	
+	
+</s:Group>
