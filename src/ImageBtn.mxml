@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+  Created by ingweland on 01.08.2014.
+-->
+<s:Image xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" buttonMode="true" mouseChildren="false">
+    <fx:Script><![CDATA[
+        /**
+         * @private     data
+         */
+        private var _data:Equation;
+
+        public function get data():Equation
+        {
+            return _data;
+        }
+
+        /**
+         * @private
+         */
+        public function set data(value:Equation):void
+        {
+            if(_data != value)
+            {
+                _data = value;
+                if(_data)
+                {
+                    this.source = Model.BASE_URL + _data.formula;
+                }
+            }
+        }
+        ]]></fx:Script>
+</s:Image>

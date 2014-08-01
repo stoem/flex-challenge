@@ -1,82 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
-			   xmlns:s="library://ns.adobe.com/flex/spark" 
-			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600">
-	<fx:Script>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+               xmlns:s="library://ns.adobe.com/flex/spark"
+               creationComplete="creationCompleteHandler(event)" fontSize="16"
+               minHeight="600" minWidth="955">
+    <fx:Script>
 		<![CDATA[
-			import mx.rpc.events.FaultEvent;
-			import mx.rpc.events.ResultEvent;
-			
-			import spark.events.TextOperationEvent;
-			
-			private const REQUEST_BASE_URL:String = 'http://latex.codecogs.com/gif.latex?\\LARGE \\bg_white ';   
-			
-			protected function txtEquation_changeHandler(event:TextOperationEvent):void
-			{
-				// trace('Requesting an image from `' + REQUEST_BASE_URL + txtEquation.text + '`...'); 
-				imgEquation.source = REQUEST_BASE_URL + txtEquation.text;
-			}
-			
-			protected function imgService_resultHandler(event:ResultEvent):void
-			{
-				
-			}
-			
-			protected function imgService_faultHandler(event:FaultEvent):void
-			{
-				
-			}
-			
-			protected function button_clickHandler(event:MouseEvent):void
-			{
-				var strToInsert:String = '', posToMove:Number = 0; 
-				var target_id:String = event.currentTarget.id; 
-				switch (target_id) {
-					case 'superscript':
-						strToInsert = '^{}';
-						posToMove = 2; 
-						break;
-					case 'fraction':
-						strToInsert = '\\frac{}{}'; 
-						posToMove = 6;  
-						break;
-					case 'int':
-						strToInsert = '\\int '; 
-						posToMove = 5; 
-						break;
-					default:
-						
-				}
-				
-				var cursorPosition:Number = txtEquation.selectionActivePosition;
-				if (cursorPosition != -1) {
-					txtEquation.text = txtEquation.text.substr(0, cursorPosition) + strToInsert + txtEquation.text.substr(cursorPosition);
-					txtEquation.selectRange(txtEquation.selectionActivePosition + posToMove, txtEquation.selectionActivePosition + posToMove); 
-				} else {
-					txtEquation.text += strToInsert;
-					txtEquation.selectRange(posToMove, posToMove); 
-				}
-			}
-			
-		]]>
+        import mx.controls.HRule;
+        import mx.events.FlexEvent;
+        import mx.rpc.events.FaultEvent;
+        import mx.rpc.events.ResultEvent;
+
+        import spark.events.TextOperationEvent;
+
+        protected function txtEquation_changeHandler(event:TextOperationEvent):void
+        {
+            updateFinalImage();
+        }
+
+        private function updateFinalImage():void
+        {
+            imgEquation.source = Model.BASE_URL + txtEquation.text;
+        }
+
+        protected function imgService_resultHandler(event:ResultEvent):void
+        {
+        }
+
+        protected function imgService_faultHandler(event:FaultEvent):void
+        {
+        }
+
+        protected function button_clickHandler(event:MouseEvent):void
+        {
+            var target:ImageBtn = ImageBtn(event.target)
+            var strToInsert:String = target.data.formula;
+            var posToMove:Number = target.data.cursorPosition;
+
+
+            var cursorPosition:Number = txtEquation.selectionActivePosition;
+            if(cursorPosition != -1)
+            {
+                txtEquation.text = txtEquation.text.substr(0,
+                                                           cursorPosition) + strToInsert + txtEquation.text.substr(cursorPosition);
+                txtEquation.selectRange(txtEquation.selectionActivePosition + posToMove,
+                                        txtEquation.selectionActivePosition + posToMove);
+            }
+            else
+            {
+                txtEquation.text += strToInsert;
+                txtEquation.selectRange(posToMove, posToMove);
+            }
+
+            updateFinalImage();
+        }
+
+        private function creationCompleteHandler(event:FlexEvent):void
+        {
+            var image:ImageBtn;
+            var rule:HRule;
+            for each (var equation:Equation in Model.EQUATIONS)
+            {
+                image = new ImageBtn();
+                image.data = equation;
+                image.addEventListener(MouseEvent.CLICK, button_clickHandler);
+                hgrpButtons.addElement(image);
+
+                rule = new HRule();
+                rule.percentWidth = 100;
+                hgrpButtons.addElement(rule);
+            }
+        }
+        ]]>
 	</fx:Script>
-	<fx:Declarations>
-		<!-- It is never used, Instead, we loads the image from url directly -->
-		<!-- HTTPService which requests a new image -->
-		<s:HTTPService id="imgService" 
-					   result="imgService_resultHandler(event)"
-					   fault="imgService_faultHandler(event)"/>
-	</fx:Declarations>
-	
-	<s:VGroup width="100%">
-		<s:HGroup id="hgrpButtons">
-			<s:Image id="superscript" source="@Embed('assets/images/buttons/superscript.gif')" click="button_clickHandler(event)"/>
-			<s:Image id="fraction" source="@Embed('assets/images/buttons/fraction.gif')" click="button_clickHandler(event)"/>
-			<s:Image id="int" source="@Embed('assets/images/buttons/int.gif')" click="button_clickHandler(event)"/>
-		</s:HGroup>
-		
-		<s:TextInput id="txtEquation" change="txtEquation_changeHandler(event)" width="100%"/>
-		
-		<s:Image id="imgEquation"/>
-	</s:VGroup>
+    <fx:Declarations>
+        <!-- It is never used, Instead, we loads the image from url directly -->
+        <!-- HTTPService which requests a new image -->
+        <s:HTTPService id="imgService"
+                       fault="imgService_faultHandler(event)"
+                       result="imgService_resultHandler(event)"/>
+    </fx:Declarations>
+
+    <s:HGroup height="100%" paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="10" width="100%">
+        <s:VGroup width="100%" gap="40">
+            <s:TextInput id="txtEquation" change="txtEquation_changeHandler(event)" width="100%"/>
+            <s:Label text="Final equation"/>
+            <s:Image id="imgEquation"/>
+        </s:VGroup>
+        <s:Scroller height="100%" width="500">
+            <s:VGroup id="hgrpButtons" height="100%" width="100%" gap="15"/>
+        </s:Scroller>
+
+    </s:HGroup>
+
+
 </s:Application>
