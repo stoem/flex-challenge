@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="20" height="20" creationComplete="init()">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import events.SymbolEvent;
+			
+			import flash.utils.flash_proxy;
+			
+			import mx.controls.Alert;
+			
+			import spark.components.Application;
+			
+			[Bindable]
+			private var _sourceSymbol:String;
+			
+			private var _textSymbol:String;
+			
+			
+			private function init():void {
+				addEvents();
+			}
+			
+			private function addEvents():void {
+				containerImage.addEventListener(MouseEvent.CLICK, handlerClickImage);
+			}
+			
+			private function handlerClickImage(e:MouseEvent):void {				
+				var data:Object = new Object();
+				data.symbol = _textSymbol;
+				var ev:SymbolEvent = new SymbolEvent(SymbolEvent.SYMBOL_CLICKED,true, false, data);
+				dispatchEvent(ev);
+			}
+			
+			
+			public function sourceSymbol(param:String):void {
+				_sourceSymbol = 'http://latex.codecogs.com/gif.latex?' +'\\' + param;
+				_textSymbol = '\\' + param;
+			}
+		]]>
+	</fx:Script>
+	
+	<s:Rect width="100%" height="100%">
+		<s:fill>
+			<s:SolidColor color="0xcccccc" />
+		</s:fill>
+	</s:Rect>
+	
+	<s:Group horizontalCenter="0" verticalCenter="0" id="containerImage">
+		<s:Image id="imgSymbol" source="{_sourceSymbol}">
+		</s:Image>
+	</s:Group>
+
+	
+</s:Group>
