@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    minWidth="955"
+    minHeight="600"
+    xmlns:local="*">
+
+	<!--
+		Preview swf at http://trembit.com/sandbox/flex-challenge/Main.swf
+	-->
+	
+    <fx:Script>
+        <![CDATA[
+            private static const SYM_INT : String = "\\int";
+
+            private static const SYM_SQR : String = "\\sqrt{}";
+
+            private static const SYM_SUM : String = "\\sum";
+
+			private static const SYM_INF : String = "\\infty";
+			
+            [Bindable]
+            private var expression : String = "1+1";
+
+            [Bindable]
+            private var pendingRequest : Boolean = true;
+
+            [Bindable]
+            private var imageSource : String;
+
+            protected function onSendRequest() : void {
+                pendingRequest = false;
+                if (expression) {
+                    imageSource = "http://latex.codecogs.com/gif.latex?\\LARGE \\bg_white " + expression;
+                } else {
+                    imageSource = null;
+                }
+            }
+
+            private function onAdd(sym : String) : void {
+                expression = expression + sym;
+                pendingRequest = true;
+				// set carret to back
+				var carretPos : Number = expression.length;
+				if (sym == SYM_SQR) {
+					carretPos--;
+				}
+                expressionInput.setFocus();
+				expressionInput.selectRange(carretPos, carretPos);
+            }
+        ]]>
+    </fx:Script>
+
+    <fx:Declarations>
+        <local:MxmlTimer working="{pendingRequest}"
+            repeatCount="1"
+            timerComplete="onSendRequest()"
+            delay="200"/>
+    </fx:Declarations>
+
+    <s:TitleWindow id="panel"
+        title="LaTeX Demo"
+        creationComplete="panel.closeButton.visible = false"
+        minWidth="300"
+        minHeight="200"
+        verticalCenter="0"
+        horizontalCenter="0">
+        <s:VGroup width="100%"
+            height="100%"
+            paddingTop="10"
+            paddingBottom="10"
+            gap="10"
+            horizontalAlign="center">
+            <s:TextInput id="expressionInput"
+                minWidth="200"
+                text="@{expression}"
+                change="pendingRequest = true"
+                creationComplete="expressionInput.setFocus()"/>
+            <s:HGroup horizontalAlign="center"
+                width="100%">
+                <s:Button label="&#8747;"
+                    width="35"
+                    click="onAdd(SYM_INT)"/>
+                <s:Button label="&#8730;"
+                    width="35"
+                    click="onAdd(SYM_SQR)"/>
+                <s:Button label="&#8721;"
+                    width="35"
+                    click="onAdd(SYM_SUM)"/>
+				<s:Button label="&#8734;"
+						  width="35"
+						  click="onAdd(SYM_INF)"/>
+            </s:HGroup>
+            <s:Spacer height="100%"/>
+            <s:Label text="Result:"/>
+            <s:Image source="{imageSource}"/>
+        </s:VGroup>
+    </s:TitleWindow>
+
+
+</s:Application>
