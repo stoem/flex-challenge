@@ -37,9 +37,9 @@
             hideStatus();
         }
 
-        private function showStatus(statusMessage: String):void
+        private function showStatus(statusMessage:String):void
         {
-            if(!statusMessage || statusMessage == "")
+            if (!statusMessage || statusMessage == "")
             {
                 return;
             }
@@ -56,7 +56,7 @@
 
         private function registerTriggers():void
         {
-            const triggersCount: int = triggersContainer.numElements;
+            const triggersCount:int = triggersContainer.numElements;
 
             for (var j:int = 0; j < triggersCount; j++)
             {
@@ -76,26 +76,32 @@
 
         private function triggerHandler(event:MouseEvent):void
         {
-            const trigger: CustomButton = (event.target) as CustomButton;
-            const curPos: int = equationInputField.selectionActivePosition; //  selectionAnchorPosition
-            const focus: int = trigger.focusPosition ? trigger.focusPosition : 0;
+            const trigger:CustomButton = (event.target) as CustomButton;
+            const curPos:int = equationInputField.selectionActivePosition; //  selectionAnchorPosition
+            const focus:int = trigger.value.indexOf(EquationSymbols.FOCUS_MARKER) != -1 ? trigger.value.indexOf(EquationSymbols.FOCUS_MARKER) : 0;
+            const value:String = stripMarker(trigger.value);
 
-            if(curPos != -1)
+            if (curPos != -1)
             {
-                equationInputField.text = equationInputField.text.substr(0, curPos) + trigger.value + equationInputField.text.substr(curPos);
+                equationInputField.text = equationInputField.text.substr(0, curPos) + value + equationInputField.text.substr(curPos);
                 equationInputField.selectRange(equationInputField.selectionActivePosition + focus, equationInputField.selectionActivePosition + focus);
             }
             else
             {
-                equationInputField.text += trigger.value;
+                equationInputField.text += value;
                 equationInputField.selectRange(focus, focus);
             }
+        }
+
+        private static function stripMarker(inputString:String):String
+        {
+            return inputString.replace(EquationSymbols.FOCUS_MARKER, "");
         }
 
         private function textInputChangeHandler(event:TextOperationEvent):void
         {
             showStatus(StatusMessages.REQUEST_IMAGE);
-			equationImage.source = REQUEST_BASE_URL + escape(event.target.text);
+            equationImage.source = REQUEST_BASE_URL + escape(event.target.text);
         }
         ]]>
 	</fx:Script>
@@ -105,12 +111,12 @@
 
     <s:VGroup id="verticalLayoutContainer" left="10" right="10" top="10" bottom="10" gap="10" horizontalAlign="center" visible="false">
         <s:HGroup id="triggersContainer" width="100%" height="100">
-            <controls:CustomButton value="{EquationSymbols.SUB}" focusPosition="2" icon="@Embed('assets/icons/subscript.png')"/>
-            <controls:CustomButton value="{EquationSymbols.SUP}" focusPosition="2" icon="@Embed('assets/icons/superscript.png')"/>
-            <controls:CustomButton value="{EquationSymbols.SUM}" focusPosition="5" icon="@Embed('assets/icons/sum.png')"/>
-            <controls:CustomButton value="{EquationSymbols.FRACTION}" focusPosition="6" icon="@Embed('assets/icons/fraction.png')"/>
-            <controls:CustomButton value="{EquationSymbols.SIN}" focusPosition="5" icon="@Embed('assets/icons/sin.png')"/>
-            <controls:CustomButton value="{EquationSymbols.COS}" focusPosition="5" icon="@Embed('assets/icons/cos.png')"/>
+            <controls:CustomButton value="{EquationSymbols.SUB}" icon="@Embed('assets/icons/subscript.png')"/>
+            <controls:CustomButton value="{EquationSymbols.SUP}" icon="@Embed('assets/icons/superscript.png')"/>
+            <controls:CustomButton value="{EquationSymbols.SUM}" icon="@Embed('assets/icons/sum.png')"/>
+            <controls:CustomButton value="{EquationSymbols.FRACTION}" icon="@Embed('assets/icons/fraction.png')"/>
+            <controls:CustomButton value="{EquationSymbols.SIN}" icon="@Embed('assets/icons/sin.png')"/>
+            <controls:CustomButton value="{EquationSymbols.COS}" icon="@Embed('assets/icons/cos.png')"/>
         </s:HGroup>
         <s:TextArea id="equationInputField" width="100%" height="200" change="textInputChangeHandler(event);"/>
         <s:Image id="equationImage"/>
